@@ -1,0 +1,76 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+body, html {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body .hide-scrollbar, html .hide-scrollbar {
+  scrollbar-width: none
+}
+
+body .hide-scrollbar::-webkit-scrollbar, html .hide-scrollbar::-webkit-scrollbar {
+  display: none
+}
+
+
+img::selection {
+  background-color: transparent;
+}
+.default-icon {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.--relative {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.overlap {
+  position: relative;
+  z-index: 3;
+}
+
+body {
+  &.overflow-hidden {
+    padding-left: calc(100vw - 100%);
+    overflow: hidden;
+
+  }
+}
+
+
+.full-height, body, html {
+  height: 100%;
+}
+
+.body-padding {
+  height: 194px;
+  @media (max-width: $breakpoint-md) {
+    height: 52px;
+  }
+}
+
+
